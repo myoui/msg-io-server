@@ -73,7 +73,7 @@ app.get('/', (req: Request, res: Response) => {
   });
   
 const updateUserList = () => {
-  io.emit('userList', userList.map((socket) => socket.data.username+'//'+socket.id).join('(*)'))
+  io.emit('userList', userList.map((socket) => socket.data.username+'//'+socket.data.userID).join('(*)'))
 }
 const updateUsers = setInterval(() => {
   updateUserList()
